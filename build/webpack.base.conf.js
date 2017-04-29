@@ -1,4 +1,5 @@
 var path = require('path')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
@@ -54,5 +55,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+        new CopyWebpackPlugin([
+            { from: 'static/manifest.json', to: 'manifest.json' },
+            { from: 'static/favicon.ico', to: 'favicon.ico' }
+        ])
+    ]
 }

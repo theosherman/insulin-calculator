@@ -1,5 +1,5 @@
 {
-  "name": "smac",
+  "name": "insulin-calculator",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Theo Sherman <theo.a.sherman@gmail.com>",
@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "numeral": "^2.0.6",
     "pug": "^2.0.0-beta.12",
     "semantic-ui-css": "^2.2.10",
     "serve": "latest",
@@ -59,5 +60,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "alias": [
+    "insulin-calculator.now.sh"
   ]
 }
