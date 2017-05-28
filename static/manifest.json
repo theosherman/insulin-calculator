@@ -5,9 +5,9 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "256x256",
-      "type": "image/x-icon"
+      "src": "syringe.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

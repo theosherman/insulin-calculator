@@ -7,6 +7,7 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
+  linkActiveClass: 'is-active',
   routes: [
     {
       path: '/',
@@ -16,6 +17,8 @@ const router = new Router({
   ]
 })
 
-ga(router, 'UA-98318965-1')
+if (process.env.NODE_ENV === 'production') {
+  ga(router, 'UA-98318965-1')
+}
 
 export default router

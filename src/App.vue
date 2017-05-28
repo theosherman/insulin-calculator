@@ -1,19 +1,31 @@
 <template lang="pug">
 div
-  router-view
+  navbar
   
-  .ui.segment.basic.footer.center.aligned
-    p &copy; 2017 Chad Schmidt
+  router-view
+  //- p.has-text-centered &copy; 2017 Chad Schmidt
 </template>
 
 <script>
-require("semantic-ui-css/components/reset.css")
-require("semantic-ui-css/components/container.css")
-require("semantic-ui-css/components/grid.css")
-require("semantic-ui-css/components/site.css")
-require("semantic-ui-css/components/segment.css")
-require("semantic-ui-css/components/header.css")
-require("semantic-ui-css/components/form.css")
-require("semantic-ui-css/components/statistic.css")
-require("semantic-ui-css/components/checkbox.css")
+export default {
+  components: {
+    'navbar': require('@/components/navbar')
+  }
+}
 </script>
+
+<style lang="sass">
+@import "~bulma/sass/utilities/initial-variables"
+
+$primary: $grey-light
+
+$body-background: #F7F8F9
+
+@import '~bulma'
+@import '~font-awesome/css/font-awesome.css'
+@import '~animate.css'
+
+.section
+  background: transparent
+
+</style>
