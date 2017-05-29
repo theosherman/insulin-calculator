@@ -1,11 +1,13 @@
 {
-  "background_color": "#ffffff",
   "name": "Insulin Calculator",
   "short_name": "Insulin Calc",
+  "start_url": ".",
   "display": "standalone",
+  "background_color": "#fff",
+  "description": "A simple insulin calculator.",
   "icons": [
     {
-      "src": "syringe.png",
+      "src": "favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }

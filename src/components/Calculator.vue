@@ -28,6 +28,8 @@ mixin input(binding, label)
 
 <script>
 import { $, _ } from 'minified'
+var addToHomescreen = require('exports-loader?addToHomescreen!add-to-homescreen')
+require('add-to-homescreen/dist/style/addtohomescreen.css')
 
 function isNumeric(val) {
   return !Number.isNaN(val) && Number.isFinite(val)
@@ -78,6 +80,11 @@ export default {
     this.carbRatio = Number.parseInt(localStorage.carbRatio)
 
     this.isConfigured = !(isNumeric(this.targetBloodSugar) && isNumeric(this.correction) && isNumeric(this.carbRatio))
+  },
+
+  mounted() {
+    console.log(addToHomescreen);
+    addToHomescreen();
   }
 }
 </script>

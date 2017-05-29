@@ -11,8 +11,10 @@
     "deploy": "aws s3 cp dist/ s3://insulin-calculator.now.im --recursive"
   },
   "dependencies": {
+    "add-to-homescreen": "^3.2.6",
     "animate.css": "^3.5.2",
     "bulma": "^0.4.1",
+    "exports-loader": "^0.6.4",
     "font-awesome": "^4.7.0",
     "minified": "^1.0.1",
     "numeral": "^2.0.6",
