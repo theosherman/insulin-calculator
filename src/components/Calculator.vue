@@ -1,22 +1,21 @@
 <template lang="pug">
 
 mixin input(binding, label)
-  .field
-    label.label=label
-    .control
-      input.input(type='number', v-model.number=binding, placeholder=label)
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    input.mdl-textfield__input(type='number', v-model.number=binding, id=binding)
+    label.mdl-textfield__label(for=binding)=label
 
-.container
-  .columns
-    .column
-      .section
-        +input('currentBloodSugar', 'Current Blood Sugar')
-        +input('carbIntake', 'Carb Intake')
-        
-        +input('targetBloodSugar', 'Target Blood Sugar')
-        +input('correction', 'Correction')
-        +input('carbRatio', 'Carb Ratio')
+div
+  .mdl-grid
+    .mdl-cell.mdl-cell--6-col
+      +input('currentBloodSugar', 'Current Blood Sugar')
+      +input('carbIntake', 'Carb Intake')
+      
+      +input('targetBloodSugar', 'Target Blood Sugar')
+      +input('correction', 'Correction')
+      +input('carbRatio', 'Carb Ratio')
 
+    .mdl-cell.mdl-cell--6-col
       .section
         nav.level
           .level-item.has-text-centered
@@ -52,11 +51,6 @@ export default {
     },
     insulinUnitsValue() {
       if (this.validInsulinUnits) {
-        $('#result').set('-animated -jello')
-        this.$nextTick(() => {
-          $('#result').set('+animated +jello')
-        })
-        
         return _.formatValue('0.0', this.insulinUnits)
       } else {
         return '¯\\_(ツ)_/¯'
@@ -83,13 +77,15 @@ export default {
   },
 
   mounted() {
-    console.log(addToHomescreen);
     addToHomescreen();
   }
 }
 </script>
 
 <style>
+#result {
+  text-align: center;
+}
 
 #result p.title {
   font-size: 3em;

@@ -1,29 +1,19 @@
 <template lang="pug">
-div
-  navbar
-  
-  router-view
-  //- p.has-text-centered &copy; 2017 Chad Schmidt
+.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+  include Navbar.pug
+  .mdl-layout__content
+    router-view
+    include Footer.pug
 </template>
 
 <script>
-export default {
-  components: {
-    'navbar': require('@/components/navbar')
-  }
-}
+import 'material-design-lite'
+
+export default {}
 </script>
 
 <style lang="sass">
-@import "~bulma/sass/utilities/initial-variables"
-
-$primary: $grey-light
-
-$body-background: #F7F8F9
-
-@import '~bulma'
-@import '~font-awesome/css/font-awesome.css'
-@import '~animate.css'
+@import '~material-design-lite/src/material-design-lite.scss'
 
 .section
   background: transparent
