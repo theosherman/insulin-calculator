@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import ga from 'vue-ga'
 import Calculator from '@/components/Calculator'
+import Settings from '@/components/Settings'
 
 Vue.use(Router)
 
@@ -13,6 +14,11 @@ const router = new Router({
       path: '/',
       name: 'Calculator',
       component: Calculator
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
     }
   ]
 })

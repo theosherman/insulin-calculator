@@ -36,8 +36,8 @@ function isNumeric(val) {
 
 export default {
   data: () => ({
+    isAdvanced: false,
     isConfigured: false,
-    hasAgreedToTerms: false,
     currentBloodSugar: '',
     targetBloodSugar: '',
     correction: '',
@@ -69,9 +69,17 @@ export default {
   },
 
   created() {
-    this.targetBloodSugar = Number.parseInt(localStorage.targetBloodSugar)
-    this.correction = Number.parseInt(localStorage.correction)
-    this.carbRatio = Number.parseInt(localStorage.carbRatio)
+    if (!localStorage.hasAgreedToTerms)
+      this.$router.push('/agreement')
+
+    this.isAdvanced = localStorage.isAdvanced
+    if (!!this.isAdvanced) {
+      // TODO: load advanced setting from local storage.
+    } else {
+      this.targetBloodSugar = Number.parseInt(localStorage.targetBloodSugar)
+      this.correction = Number.parseInt(localStorage.correction)
+      this.carbRatio = Number.parseInt(localStorage.carbRatio)
+    }
 
     this.isConfigured = !(isNumeric(this.targetBloodSugar) && isNumeric(this.correction) && isNumeric(this.carbRatio))
   },

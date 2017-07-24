@@ -6,15 +6,7 @@
     include Footer.pug
 </template>
 
-<script>
-import 'material-design-lite'
-
-export default {}
-</script>
-
 <style lang="sass">
-@import '~material-design-lite/src/material-design-lite.scss'
-
 .section
   background: transparent
 
