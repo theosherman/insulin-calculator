@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "serve ./dist --single",
     "build": "node build/build.js",
-    "deploy": "aws s3 cp dist/ s3://insulin-calculator.now.im --recursive"
+    "start": "serve ./dist --single",
+    "deploy": "now ./dist"
   },
   "dependencies": {
     "add-to-homescreen": "^3.2.6",

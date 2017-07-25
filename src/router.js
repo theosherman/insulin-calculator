@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ga from 'vue-ga'
-import Calculator from '@/components/Calculator'
-import Settings from '@/components/Settings'
 
 Vue.use(Router)
 
@@ -13,12 +11,22 @@ const router = new Router({
     {
       path: '/',
       name: 'Calculator',
-      component: Calculator
+      component: require('@/components/Calculator')
     },
     {
       path: '/settings',
       name: 'Settings',
-      component: Settings
+      component: require('@/components/Settings')
+    },
+    {
+      path: '/help',
+      name: 'Help',
+      component: require('@/components/Help')
+    },
+    {
+      path: '/agreement',
+      name: 'Agreement',
+      component: require('@/components/Agreement')
     }
   ]
 })
